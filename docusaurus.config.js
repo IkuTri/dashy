@@ -29,12 +29,18 @@ module.exports = {
     // Dark & Light Mode
     colorMode: {
       defaultMode: 'dark',
+      switchConfig: {
+        darkIcon: '🌙',
+        lightIcon: '☀️',
+      },
     },
     // Algolia Web Search
     algolia: {
       apiKey: '97d967bd42096f2c69f015214ff36176',
       indexName: 'main',
-      appId: '9NYB4LE3DS',
+      // contextualSearch: true,
+      // appId: '9NYB4LE3DS',
+      // searchParameters: {},
     },
     // Prism Code Highlighting
     prism: {
@@ -110,9 +116,9 @@ module.exports = {
           items: [
             { label: 'Privacy & Security', to: '/docs/privacy' },
             { label: 'License', to: '/docs/license' },
-            { label: 'Legal', href: 'https://github.com/Lissy93/dashy/blob/master/.github/LEGAL.md' },
-            { label: 'Code of Conduct', href: 'https://github.com/Lissy93/dashy/blob/master/.github/CODE_OF_CONDUCT.md' },
-            { label: 'Changelog', href: 'https://github.com/Lissy93/dashy/blob/master/.github/CHANGELOG.md' },
+            { label: 'Legal', to: 'https://github.com/Lissy93/dashy/blob/master/.github/LEGAL.md' },
+            { label: 'Code of Conduct', to: '/docs/code-of-conduct' },
+            { label: 'Changelog', to: '/docs/changelog' },
           ],
         },
       ],

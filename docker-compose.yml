@@ -16,9 +16,8 @@ services:
     # image: ghcr.io/lissy93/dashy or image: lissy93/dashy:3.0.0
 
     # Pass in your config file below, by specifying the path on your host machine
-    # volumes:
-      # - /path/to/my-config.yml:/app/user-data/conf.yml
-      # - /path/to/item-icons:/app/user-data/item-icons/
+    volumes:
+      - ./user-data/conf.yml:/app/user-data/conf.yml
 
     # Set port that web service will be served on. Keep container port as 8080
     ports:

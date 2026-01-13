@@ -1,47 +1,146 @@
 ---
-# Page meta info, like heading, footer text and nav links
 pageInfo:
-  title: Dashy
-  description: Welcome to your new dashboard!
+  title: Tricus-PK
+  description: IkuSoft Dev Environment
   navLinks:
-  - title: GitHub
-    path: https://github.com/Lissy93/dashy
-  - title: Documentation
-    path: https://dashy.to/docs
+    - title: GitHub
+      path: https://github.com/IkuTri
+    - title: Perforce
+      path: https://209.141.34.84:1666
 
-# Optional app settings and configuration
 appConfig:
-  theme: colorful
+  theme: dark-terminal
+  layout: auto
+  iconSize: medium
+  statusCheck: true
+  statusCheckInterval: 30
 
-# Main content - An array of sections, each containing an array of items
 sections:
-- name: Getting Started
-  icon: fas fa-rocket
-  items:
-  - title: Dashy Live
-    description: Development a project management links for Dashy
-    icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-    url: https://live.dashy.to/
-    target: newtab
-  - title: GitHub
-    description: Source Code, Issues and Pull Requests
-    url: https://github.com/lissy93/dashy
-    icon: favicon
-  - title: Docs
-    description: Configuring & Usage Documentation
-    provider: Dashy.to
-    icon: far fa-book
-    url: https://dashy.to/docs
-  - title: Showcase
-    description: See how others are using Dashy
-    url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
-    icon: far fa-grin-hearts
-  - title: Config Guide
-    description: See full list of configuration options
-    url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
-    icon: fas fa-wrench
-  - title: Support
-    description: Get help with Dashy, raise a bug, or get in contact
-    url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
-    icon: far fa-hands-helping
-  
+  # ═══════════════════════════════════════════════════════════════════════════
+  # IkuSoft Backend Stack
+  # ═══════════════════════════════════════════════════════════════════════════
+  - name: IkuSoft-Spine (Backend)
+    icon: fas fa-database
+    displayData:
+      collapsed: false
+      cols: 2
+    items:
+      - title: Supabase Studio
+        description: Database GUI, Auth, Storage
+        url: http://localhost:54323
+        icon: fas fa-table
+        statusCheck: true
+      - title: Kong API Gateway
+        description: REST API endpoint
+        url: http://localhost:54321
+        icon: fas fa-exchange-alt
+        statusCheck: true
+      - title: Postgres Direct
+        description: Port 54322 (psql)
+        url: http://localhost:54322
+        icon: fas fa-database
+        statusCheck: true
+      - title: KeyDB (Redis)
+        description: Cache layer - port 54328
+        url: http://localhost:54328
+        icon: fas fa-bolt
+        statusCheck: true
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # IkuSoft Services
+  # ═══════════════════════════════════════════════════════════════════════════
+  - name: IkuSoft Services
+    icon: fas fa-server
+    displayData:
+      collapsed: false
+      cols: 2
+    items:
+      - title: gamelog-api
+        description: Telemetry & item management API
+        url: http://localhost:54333
+        icon: fas fa-chart-line
+        statusCheck: true
+      - title: gamelog-ui
+        description: Next.js frontend for GameLog
+        url: http://localhost:3002
+        icon: fas fa-gamepad
+        statusCheck: true
+      - title: Ephemeral Adapter
+        description: Dev auth bridge (when running)
+        url: http://localhost:3456
+        icon: fas fa-key
+        statusCheck: true
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Observability & Tooling
+  # ═══════════════════════════════════════════════════════════════════════════
+  - name: Observability
+    icon: fas fa-eye
+    displayData:
+      collapsed: false
+      cols: 2
+    items:
+      - title: ELF Dashboard
+        description: Emergent Learning Framework
+        url: http://localhost:3001
+        icon: fas fa-brain
+        statusCheck: true
+      - title: ELF API
+        description: Backend on 8888
+        url: http://localhost:8888/api/stats
+        icon: fas fa-cogs
+        statusCheck: true
+      - title: Dockhand
+        description: Docker container management
+        url: http://localhost:3000
+        icon: fab fa-docker
+        statusCheck: true
+      - title: llama-swap
+        description: Local LLM inference
+        url: http://localhost:8080
+        icon: fas fa-robot
+        statusCheck: true
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Development Links
+  # ═══════════════════════════════════════════════════════════════════════════
+  - name: Development
+    icon: fas fa-code
+    displayData:
+      collapsed: true
+      cols: 2
+    items:
+      - title: IkuSoft GitHub
+        description: Game project repos
+        url: https://github.com/IkuTri
+        icon: fab fa-github
+      - title: Perforce Server
+        description: UE source control
+        url: https://209.141.34.84:1666
+        icon: fas fa-code-branch
+      - title: Linode (Game Server)
+        description: 173.230.139.145
+        url: http://173.230.139.145
+        icon: fas fa-gamepad
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Quick Commands (just visual reference)
+  # ═══════════════════════════════════════════════════════════════════════════
+  - name: Quick Reference
+    icon: fas fa-terminal
+    displayData:
+      collapsed: true
+      cols: 1
+    items:
+      - title: just spine-up
+        description: Start full Spine stack
+        icon: fas fa-play
+      - title: just spine-core
+        description: Start minimal (db, auth, rest)
+        icon: fas fa-compress
+      - title: just dev-stack
+        description: Spine + Adapter + gamelog
+        icon: fas fa-layer-group
+      - title: just dev-down
+        description: Stop everything
+        icon: fas fa-stop

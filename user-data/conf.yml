@@ -37,14 +37,14 @@ sections:
         statusCheck: true
       - title: Postgres Direct
         description: Port 54322 (psql)
-        url: http://localhost:54322
+        url: http://localhost:54323
         icon: fas fa-database
-        statusCheck: true
+        statusCheck: false
       - title: KeyDB (Redis)
         description: Cache layer - port 54328
-        url: http://localhost:54328
+        url: http://localhost:54323
         icon: fas fa-bolt
-        statusCheck: true
+        statusCheck: false
 
   # ═══════════════════════════════════════════════════════════════════════════
   # IkuSoft Services

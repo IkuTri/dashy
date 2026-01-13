@@ -6,8 +6,8 @@ services:
   dashy:
     container_name: Dashy
 
-    # Pull latest image from DockerHub
-    image: lissy93/dashy
+    # Pin to 3.0.0 - 3.1.1 has status-check bug that crashes server
+    image: lissy93/dashy:3.0.0
 
     # To build from source, replace 'image: lissy93/dashy' with 'build: .'
     # build: .

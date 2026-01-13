@@ -30,11 +30,15 @@ sections:
         url: http://localhost:54323
         icon: fas fa-table
         statusCheck: true
+        statusCheckAcceptCodes: '307,302'
+        statusCheckUrl: http://host.docker.internal:54323
       - title: Kong API Gateway
         description: REST API endpoint
         url: http://localhost:54321
         icon: fas fa-exchange-alt
         statusCheck: true
+        statusCheckAcceptCodes: '404,302'
+        statusCheckUrl: http://host.docker.internal:54321
       - title: Postgres Direct
         description: Port 54322 (psql)
         url: http://localhost:54323
@@ -60,16 +64,19 @@ sections:
         url: http://localhost:54333
         icon: fas fa-chart-line
         statusCheck: true
+        statusCheckUrl: http://host.docker.internal:54333/health
       - title: gamelog-ui
         description: Next.js frontend for GameLog
         url: http://localhost:3002
         icon: fas fa-gamepad
         statusCheck: true
+        statusCheckUrl: http://host.docker.internal:3002
       - title: Ephemeral Adapter
         description: Dev auth bridge (when running)
         url: http://localhost:3456
         icon: fas fa-key
         statusCheck: true
+        statusCheckUrl: http://host.docker.internal:3456/health
 
   # ═══════════════════════════════════════════════════════════════════════════
   # Observability & Tooling
@@ -85,21 +92,26 @@ sections:
         url: http://localhost:3001
         icon: fas fa-brain
         statusCheck: true
+        statusCheckUrl: http://host.docker.internal:3001
       - title: ELF API
         description: Backend on 8888
         url: http://localhost:8888/api/stats
         icon: fas fa-cogs
         statusCheck: true
+        statusCheckUrl: http://host.docker.internal:8888/api/stats
       - title: Dockhand
         description: Docker container management
         url: http://localhost:3000
         icon: fab fa-docker
         statusCheck: true
+        statusCheckUrl: http://host.docker.internal:3000
       - title: llama-swap
         description: Local LLM inference
         url: http://localhost:8080
         icon: fas fa-robot
         statusCheck: true
+        statusCheckAcceptCodes: '302,307'
+        statusCheckUrl: http://host.docker.internal:8080
 
   # ═══════════════════════════════════════════════════════════════════════════
   # Development Links

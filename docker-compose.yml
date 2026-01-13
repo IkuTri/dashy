@@ -23,6 +23,10 @@ services:
     ports:
       - 4000:8080
 
+    # Allow container to reach host services via 'host.docker.internal'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
     # Set any environmental variables
     environment:
       - NODE_ENV=production

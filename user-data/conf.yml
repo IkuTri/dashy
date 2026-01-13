@@ -93,6 +93,7 @@ sections:
         icon: fas fa-brain
         statusCheck: true
         statusCheckUrl: http://host.docker.internal:3001
+        statusCheckAcceptCodes: '403'
       - title: ELF API
         description: Backend on 8888
         url: http://localhost:8888/api/stats
